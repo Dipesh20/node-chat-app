@@ -59,7 +59,6 @@ $messageForm.addEventListener('submit',(e)=>{
         {
             return console.log(error)
         }
-        console.log('Message Delivered')
     })
 })
 $messageLocationButton.addEventListener('click',()=>{
@@ -75,7 +74,6 @@ $messageLocationButton.addEventListener('click',()=>{
             longitude:position.coords.longitude
         },()=>{
             $messageLocationButton.removeAttribute('disabled')
-            console.log('Location Shared')
         })
     })
 }) 
@@ -91,7 +89,7 @@ socket.emit('join',{username,room},(error)=>{
 const autoscroll = ()=>{
 
     const $newMessage = $messages.lastElementChild
-    
+
     const newMessageStyles = getComputedStyle($newMessage)
     const newMessageMargin = parseInt(newMessageStyles.marginBottom)
     const newMessageHeight = $newMessage.offsetHeight + newMessageMargin

@@ -20,8 +20,6 @@ const io = socketio(server)
 // hbs.registerPartials(PartialDirectory)
 
 app.use(express.static(PublicDirectory))
-
-let count = 0
 const PORT = process.env.PORT || 3000
 io.on('connection',(socket)=>{
     
@@ -75,6 +73,4 @@ io.on('connection',(socket)=>{
     })
 }) 
 
-server.listen(PORT,()=>{
-    console.log('server running on',PORT)
-})
+server.listen(PORT)
