@@ -1,7 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
-const http = require('https')
+const http = require('http')
 const socketio = require('socket.io')
 const Filter = require('bad-words')
 const {generateMessage} = require('./utils/messages.js')
@@ -76,5 +76,5 @@ io.on('connection',(socket)=>{
 }) 
 
 server.listen(PORT,()=>{
-    console.log('server running on 3000')
+    console.log('server running on',PORT)
 })
